@@ -13,7 +13,7 @@ curl -sfL https://get.rke2.io | sh -
 systemctl enable rke2-server.service
 systemctl start rke2-server.service
 
-SERVER_NODE_TOKEN=`cat /var/lib/rancher/k3s/server/node-token`
+SERVER_NODE_TOKEN=`cat /var/lib/rancher/rke2/server/node-token`
 
 # 2nd, 3rd control plane nodes
 sudo su -
@@ -78,7 +78,7 @@ EOF
 
 systemctl start rke2-server.service
 
-SERVER_NODE_TOKEN=`cat /var/lib/rancher/k3s/server/node-token`
+SERVER_NODE_TOKEN=`cat /var/lib/rancher/rke2/server/node-token`
 
 # 2nd, 3rd control plane nodes
 sudo su -
