@@ -1,4 +1,4 @@
-# rke2-HA
+# RKE2-HA
 
 The control plane nodes _must be_ odd number.
 ```shell
@@ -47,7 +47,7 @@ EOF
 systemctl start rke2-agent.service
 ```
 
-# rke2-HA with CIS-1.5 profile
+# RKE2-HA with CIS-1.5 profile
 
 The control plane nodes _must be_ odd number.
 ```shell
