@@ -33,6 +33,8 @@ token: $SERVER_NODE_TOKEN
 systemctl start rke2-server.service
 
 # worker nodes
+sudo su -
+
 systemctl disable firewalld
 systemctl stop firewalld
 curl -sfL https://get.rke2.io | INSTALL_RKE2_TYPE="agent" sh -
