@@ -11,6 +11,12 @@ systemctl stop firewalld
 curl -sfL https://get.rke2.io | sh -
 
 systemctl enable rke2-server.service
+
+mkdir -p /etc/rancher/rke2/
+cat << EOF > /etc/rancher/rke2/config.yaml
+kube-apiserver-arg: "kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname"
+EOF
+
 systemctl start rke2-server.service
 
 SERVER_NODE_TOKEN=`cat /var/lib/rancher/rke2/server/node-token`
@@ -75,6 +81,7 @@ useradd -r -c "etcd user" -s /sbin/nologin -M etcd
 
 mkdir -p /etc/rancher/rke2/
 cat << EOF > /etc/rancher/rke2/config.yaml
+kube-apiserver-arg: "kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname"
 profile: "cis-1.5"
 EOF
 
